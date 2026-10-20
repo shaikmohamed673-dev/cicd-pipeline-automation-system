@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  app:
+    image: ${DOCKER_IMAGE_NAME:-shaikmohamed673/cicd-pipeline-app}:${IMAGE_TAG:-latest}
+    container_name: cicd-web-app-prod
+    restart: always
+    ports:
+      - "${HOST_PORT:-3000}:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - HOST=0.0.0.0
+      - APP_VERSION=${APP_VERSION:-1.0.0}
+      - BUILD_NUMBER=${BUILD_NUMBER:-prod}
+      - GIT_COMMIT=${GIT_COMMIT:-main}
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 20s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 512M
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "20m"
+        max-file: "5"

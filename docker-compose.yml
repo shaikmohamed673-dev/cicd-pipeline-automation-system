@@ -1,0 +1,71 @@
+version: '3.8'
+
+services:
+  # -------------------------------------------------------------
+  # Web Application Container
+  # -------------------------------------------------------------
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    image: shaikmohamed673/cicd-pipeline-app:latest
+    container_name: cicd-web-app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - HOST=0.0.0.0
+      - APP_VERSION=1.0.0
+      - BUILD_NUMBER=compose-local-1
+      - GIT_COMMIT=release-stable
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    deploy:
+      resources:
+        limits:
+          cpus: '0.75'
+          memory: 384M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
+    networks:
+      - cicd-network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # -------------------------------------------------------------
+  # Jenkins Automation Server (Orchestration Engine)
+  # -------------------------------------------------------------
+  jenkins:
+    image: jenkins/jenkins:lts-jdk17
+    container_name: jenkins-ci-server
+    restart: unless-stopped
+    user: root # Allows access to mounted docker.sock for building images
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    environment:
+      - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - cicd-network
+
+volumes:
+  jenkins_home:
+    driver: local
+
+networks:
+  cicd-network:
+    driver: bridge

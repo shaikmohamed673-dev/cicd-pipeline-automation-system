@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgG" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1120" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <filter id="fShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <rect width="1000" height="480" rx="14" fill="url(#bgG)" stroke="#334155" stroke-width="1.5" />
+
+  <text x="500" y="45" font-family="Plus Jakarta Sans, sans-serif" font-size="20" font-weight="800" fill="#f8fafc" text-anchor="middle">Docker Multi-Stage Build &amp; Container Isolation Flow</text>
+  <text x="500" y="70" font-family="JetBrains Mono, monospace" font-size="12" fill="#38bdf8" text-anchor="middle">Optimizing image size from 850 MB to 72 MB with non-root security execution</text>
+
+  <!-- Stage 1: Builder -->
+  <g transform="translate(60, 110)" filter="url(#fShadow)">
+    <rect width="250" height="320" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5" />
+    <rect width="250" height="40" rx="12" fill="#78350f" />
+    <text x="125" y="25" font-family="Plus Jakarta Sans, sans-serif" font-size="14" font-weight="700" fill="#fef3c7" text-anchor="middle">STAGE 1: Builder (node:20-alpine)</text>
+
+    <text x="20" y="70" font-family="JetBrains Mono, monospace" font-size="11" fill="#e2e8f0">• Install build tools (python/make)</text>
+    <text x="20" y="95" font-family="JetBrains Mono, monospace" font-size="11" fill="#e2e8f0">• Copy package*.json</text>
+    <text x="20" y="120" font-family="JetBrains Mono, monospace" font-size="11" fill="#e2e8f0">• npm ci (full devDependencies)</text>
+    <text x="20" y="145" font-family="JetBrains Mono, monospace" font-size="11" fill="#e2e8f0">• Copy entire source code</text>
+    <text x="20" y="170" font-family="JetBrains Mono, monospace" font-size="11" fill="#e2e8f0">• Run ESLint &amp; Jest unit tests</text>
+    <text x="20" y="195" font-family="JetBrains Mono, monospace" font-size="11" fill="#e2e8f0">• npm prune --production</text>
+
+    <rect x="20" y="250" width="210" height="45" rx="6" fill="#0f172a" />
+    <text x="125" y="272" font-family="JetBrains Mono, monospace" font-size="11" fill="#f59e0b" text-anchor="middle">Intermediate Context</text>
+    <text x="125" y="287" font-family="JetBrains Mono, monospace" font-size="10" fill="#94a3b8" text-anchor="middle">Discarded after build (~850 MB)</text>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M 330 270 L 400 270" fill="none" stroke="#38bdf8" stroke-width="3" stroke-dasharray="5,4" />
+  <polygon points="400,270 390,265 390,275" fill="#38bdf8" />
+  <text x="365" y="255" font-family="JetBrains Mono, monospace" font-size="10" fill="#38bdf8" text-anchor="middle">COPY only</text>
+
+  <!-- Stage 2: Production -->
+  <g transform="translate(410, 110)" filter="url(#fShadow)">
+    <rect width="250" height="320" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="1.5" />
+    <rect width="250" height="40" rx="12" fill="#064e3b" />
+    <text x="125" y="25" font-family="Plus Jakarta Sans, sans-serif" font-size="14" font-weight="700" fill="#a7f3d0" text-anchor="middle">STAGE 2: Production Runtime</text>
+
+    <text x="20" y="70" font-family="JetBrains Mono, monospace" font-size="11" fill="#e2e8f0">• Lean alpine base image</text>
+    <text x="20" y="95" font-family="JetBrains Mono, monospace" font-size="11" fill="#e2e8f0">• adduser -S appuser (non-root)</text>
+    <text x="20" y="120" font-family="JetBrains Mono, monospace" font-size="11" fill="#e2e8f0">• Copy pruned node_modules</text>
+    <text x="20" y="145" font-family="JetBrains Mono, monospace" font-size="11" fill="#e2e8f0">• Copy src/ &amp; public/</text>
+    <text x="20" y="170" font-family="JetBrains Mono, monospace" font-size="11" fill="#e2e8f0">• Set USER appuser</text>
+    <text x="20" y="195" font-family="JetBrains Mono, monospace" font-size="11" fill="#e2e8f0">• HEALTHCHECK probe configured</text>
+
+    <rect x="20" y="250" width="210" height="45" rx="6" fill="#064e3b" />
+    <text x="125" y="272" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" fill="#6ee7b7" text-anchor="middle">Final Lean Image</text>
+    <text x="125" y="287" font-family="JetBrains Mono, monospace" font-size="10" fill="#d1fae5" text-anchor="middle">Production Ready (~72 MB)</text>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M 680 270 L 740 270" fill="none" stroke="#10b981" stroke-width="3" stroke-dasharray="5,4" />
+  <polygon points="740,270 730,265 730,275" fill="#10b981" />
+  <text x="710" y="255" font-family="JetBrains Mono, monospace" font-size="10" fill="#10b981" text-anchor="middle">push</text>
+
+  <!-- Stage 3: Docker Hub Registry & Runtime -->
+  <g transform="translate(750, 110)" filter="url(#fShadow)">
+    <rect width="200" height="320" rx="12" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" />
+    <rect width="200" height="40" rx="12" fill="#0369a1" />
+    <text x="100" y="25" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="700" fill="#e0f2fe" text-anchor="middle">Docker Hub Registry</text>
+
+    <circle cx="100" cy="95" r="30" fill="#0284c7" opacity="0.3" />
+    <text x="100" y="105" font-size="30" text-anchor="middle">🐳</text>
+
+    <text x="100" y="160" font-family="JetBrains Mono, monospace" font-size="10" fill="#f8fafc" text-anchor="middle">shaikmohamed673/</text>
+    <text x="100" y="178" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700" fill="#38bdf8" text-anchor="middle">cicd-pipeline-app</text>
+
+    <text x="100" y="210" font-family="JetBrains Mono, monospace" font-size="10" fill="#94a3b8" text-anchor="middle">Tag: :42</text>
+    <text x="100" y="228" font-family="JetBrains Mono, monospace" font-size="10" fill="#94a3b8" text-anchor="middle">Tag: :latest</text>
+
+    <rect x="15" y="255" width="170" height="40" rx="6" fill="#0f172a" />
+    <text x="100" y="278" font-family="JetBrains Mono, monospace" font-size="10" fill="#10b981" text-anchor="middle">Zero Vulnerabilities</text>
+  </g>
+</svg>

@@ -1,0 +1,32 @@
+# Git
+.git
+.gitignore
+
+# Dependencies & Build artifacts
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+test-results
+coverage
+
+# Documentation & Screenshots
+docs/
+*.md
+
+# Local Environment & Secrets
+.env
+.env.local
+.env.*.local
+
+# CI & Editor files
+.github/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Docker files
+Dockerfile
+docker-compose*.yml
+.dockerignore

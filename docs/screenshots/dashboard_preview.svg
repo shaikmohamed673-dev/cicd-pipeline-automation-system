@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 620" width="100%" height="100%">
+  <defs>
+    <linearGradient id="dbBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0e17" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1f2937" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+  </defs>
+
+  <!-- Browser Frame -->
+  <rect width="1100" height="620" rx="12" fill="url(#dbBg)" stroke="#374151" stroke-width="2" />
+
+  <!-- Browser Top Bar -->
+  <rect width="1100" height="42" rx="12" fill="#1f2937" />
+  <circle cx="24" cy="21" r="6" fill="#ef4444" />
+  <circle cx="44" cy="21" r="6" fill="#f59e0b" />
+  <circle cx="64" cy="21" r="6" fill="#10b981" />
+  
+  <rect x="250" y="8" width="600" height="26" rx="6" fill="#111827" stroke="#374151" stroke-width="1" />
+  <text x="550" y="25" font-family="JetBrains Mono, monospace" font-size="11" fill="#94a3b8" text-anchor="middle">http://localhost:3000 — CI/CD Pipeline Automation System</text>
+
+  <!-- Navbar -->
+  <rect x="0" y="42" width="1100" height="60" fill="#111827" stroke="#1f2937" stroke-width="1" />
+  <text x="40" y="77" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="800" fill="#f8fafc">DevOps CI/CD Automation</text>
+  <rect x="850" y="58" width="140" height="28" rx="14" fill="#064e3b" stroke="#10b981" stroke-width="1" />
+  <circle cx="866" cy="72" r="4" fill="#10b981" />
+  <text x="876" y="76" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" fill="#6ee7b7">HEALTHY (200 OK)</text>
+  <rect x="1005" y="58" width="70" height="28" rx="6" fill="#1e293b" />
+  <text x="1040" y="76" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" fill="#38bdf8" text-anchor="middle">PROD</text>
+
+  <!-- Hero Banner -->
+  <g transform="translate(40, 120)">
+    <rect width="1020" height="130" rx="12" fill="#1e293b" stroke="#374151" stroke-width="1" />
+    <rect x="24" y="20" width="220" height="22" rx="11" fill="#0369a1" opacity="0.3" />
+    <text x="134" y="35" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700" fill="#38bdf8" text-anchor="middle">🚀 Cognevance Internship Project</text>
+    <text x="24" y="72" font-family="Plus Jakarta Sans, sans-serif" font-size="22" font-weight="800" fill="#f8fafc">CI/CD Pipeline Automation System</text>
+    <text x="24" y="98" font-family="Plus Jakarta Sans, sans-serif" font-size="13" fill="#94a3b8">Automated build, test, multi-stage Docker packaging, Docker Hub push, and zero-downtime deployment.</text>
+    <text x="24" y="125" font-family="JetBrains Mono, monospace" font-size="11" fill="#38bdf8">Author: Shaik Mohamed • Jenkins Pipeline • Docker Engine 29.8 • Node.js 20 Alpine</text>
+  </g>
+
+  <!-- Telemetry Cards -->
+  <g transform="translate(40, 270)">
+    <!-- Card 1 -->
+    <rect width="235" height="110" rx="10" fill="url(#cardGrad)" stroke="#374151" stroke-width="1" />
+    <text x="20" y="30" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="600" fill="#94a3b8">CONTAINER UPTIME</text>
+    <text x="20" y="65" font-family="Plus Jakarta Sans, sans-serif" font-size="22" font-weight="800" fill="#f8fafc">1h 45m 12s</text>
+    <text x="20" y="95" font-family="JetBrains Mono, monospace" font-size="10" fill="#10b981">✓ Status: Operational</text>
+
+    <!-- Card 2 -->
+    <rect x="260" width="235" height="110" rx="10" fill="url(#cardGrad)" stroke="#374151" stroke-width="1" />
+    <text x="280" y="30" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="600" fill="#94a3b8">HOST / CONTAINER ID</text>
+    <text x="280" y="65" font-family="JetBrains Mono, monospace" font-size="17" font-weight="700" fill="#38bdf8">cicd-web-app-prod</text>
+    <text x="280" y="95" font-family="JetBrains Mono, monospace" font-size="10" fill="#94a3b8">Platform: linux/x64</text>
+
+    <!-- Card 3 -->
+    <rect x="520" width="235" height="110" rx="10" fill="url(#cardGrad)" stroke="#374151" stroke-width="1" />
+    <text x="540" y="30" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="600" fill="#94a3b8">MEMORY CONSUMPTION</text>
+    <text x="540" y="65" font-family="Plus Jakarta Sans, sans-serif" font-size="22" font-weight="800" fill="#f8fafc">32.40 MB</text>
+    <text x="540" y="95" font-family="JetBrains Mono, monospace" font-size="10" fill="#94a3b8">Heap: 14.8 MB / 21.2 MB</text>
+
+    <!-- Card 4 -->
+    <rect x="780" width="240" height="110" rx="10" fill="url(#cardGrad)" stroke="#374151" stroke-width="1" />
+    <text x="800" y="30" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="600" fill="#94a3b8">PROBE LATENCY</text>
+    <text x="800" y="65" font-family="Plus Jakarta Sans, sans-serif" font-size="22" font-weight="800" fill="#10b981">11 ms</text>
+    <text x="800" y="95" font-family="JetBrains Mono, monospace" font-size="10" fill="#94a3b8">Protocol: HTTP/1.1 REST</text>
+  </g>
+
+  <!-- Interactive Panel Console Preview -->
+  <g transform="translate(40, 400)">
+    <rect width="1020" height="190" rx="10" fill="#050811" stroke="#374151" stroke-width="1" />
+    <rect width="1020" height="34" rx="10" fill="#111827" />
+    <text x="20" y="22" font-family="JetBrains Mono, monospace" font-size="11" fill="#38bdf8">GET /health ➔ Live JSON Probe Response (HTTP 200 OK)</text>
+
+    <text x="20" y="60" font-family="JetBrains Mono, monospace" font-size="11" fill="#a7f3d0">{</text>
+    <text x="40" y="80" font-family="JetBrains Mono, monospace" font-size="11" fill="#a7f3d0">"status": "UP", "statusCode": 200, "service": "cicd-pipeline-automation-system",</text>
+    <text x="40" y="100" font-family="JetBrains Mono, monospace" font-size="11" fill="#a7f3d0">"version": "1.0.0", "build": { "number": "42", "commit": "a79f42c" },</text>
+    <text x="40" y="120" font-family="JetBrains Mono, monospace" font-size="11" fill="#a7f3d0">"system": { "hostname": "cicd-web-app-prod", "platform": "linux", "nodeVersion": "v20.18.0" },</text>
+    <text x="40" y="140" font-family="JetBrains Mono, monospace" font-size="11" fill="#a7f3d0">"process": { "pid": 1, "memoryRssMB": "32.40", "heapUsedMB": "14.80" }</text>
+    <text x="20" y="160" font-family="JetBrains Mono, monospace" font-size="11" fill="#a7f3d0">}</text>
+  </g>
+</svg>

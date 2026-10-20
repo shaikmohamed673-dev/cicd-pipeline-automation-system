@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CI/CD Pipeline Automation System | DevOps Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body data-theme="dark">
+  <div class="app-wrapper">
+    <!-- Navigation Bar -->
+    <header class="navbar">
+      <div class="nav-brand">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">DevOps CI/CD Automation</span>
+          <span class="brand-subtitle">Jenkins • Docker • Automated Rollout</span>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <div class="status-badge" id="system-status-badge">
+          <span class="status-dot pulsing"></span>
+          <span class="status-label">HEALTHY (200 OK)</span>
+        </div>
+        <span class="env-badge" id="env-badge">PRODUCTION</span>
+        <button class="theme-toggle" id="theme-toggle-btn" title="Toggle Theme" aria-label="Toggle Theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Dashboard -->
+    <main class="dashboard-content">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="hero-content">
+          <div class="badge-pill">🚀 Cognevance Internship Project Submission</div>
+          <h1 class="hero-title">CI/CD Pipeline Automation System</h1>
+          <p class="hero-subtitle">
+            Fully automated declarative Jenkins CI/CD pipeline integrated with Docker containerization, 
+            Docker Hub automated registry delivery, multi-stage testing suites, and zero-downtime deployment.
+          </p>
+          <div class="meta-row">
+            <div class="meta-item">
+              <span class="meta-label">Author:</span>
+              <span class="meta-val">Shaik Mohamed</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Orchestration:</span>
+              <span class="meta-val highlight">Jenkins Declarative Pipeline</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Container Engine:</span>
+              <span class="meta-val highlight">Docker Engine 29.8</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Registry:</span>
+              <span class="meta-val highlight">Docker Hub</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pipeline Stages Visualizer -->
+      <section class="panel pipeline-visualizer-panel">
+        <div class="panel-header">
+          <div class="panel-title-group">
+            <h2 class="panel-title">Automated CI/CD Pipeline Stages</h2>
+            <span class="panel-subtitle">Real-time visualization of the automated Jenkins declarative pipeline</span>
+          </div>
+          <button class="btn-sm btn-ghost" id="simulate-pipeline-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            Simulate Run
+          </button>
+        </div>
+
+        <div class="pipeline-track" id="pipeline-track">
+          <!-- Stage 1 -->
+          <div class="stage-node success" data-stage="1">
+            <div class="stage-icon">📥</div>
+            <div class="stage-details">
+              <span class="stage-name">Checkout</span>
+              <span class="stage-meta">Git SCM (main)</span>
+            </div>
+            <span class="stage-status-pill">PASSED</span>
+          </div>
+
+          <div class="stage-connector"></div>
+
+          <!-- Stage 2 -->
+          <div class="stage-node success" data-stage="2">
+            <div class="stage-icon">🔍</div>
+            <div class="stage-details">
+              <span class="stage-name">Linting</span>
+              <span class="stage-meta">ESLint & Syntax</span>
+            </div>
+            <span class="stage-status-pill">PASSED</span>
+          </div>
+
+          <div class="stage-connector"></div>
+
+          <!-- Stage 3 -->
+          <div class="stage-node success" data-stage="3">
+            <div class="stage-icon">🧪</div>
+            <div class="stage-details">
+              <span class="stage-name">Unit Tests</span>
+              <span class="stage-meta">Jest & JUnit XML</span>
+            </div>
+            <span class="stage-status-pill">PASSED</span>
+          </div>
+
+          <div class="stage-connector"></div>
+
+          <!-- Stage 4 -->
+          <div class="stage-node success" data-stage="4">
+            <div class="stage-icon">🐳</div>
+            <div class="stage-details">
+              <span class="stage-name">Docker Build</span>
+              <span class="stage-meta">Multi-Stage Image</span>
+            </div>
+            <span class="stage-status-pill">PASSED</span>
+          </div>
+
+          <div class="stage-connector"></div>
+
+          <!-- Stage 5 -->
+          <div class="stage-node success" data-stage="5">
+            <div class="stage-icon">🛡️</div>
+            <div class="stage-details">
+              <span class="stage-name">Security Scan</span>
+              <span class="stage-meta">Trivy Vulnerability</span>
+            </div>
+            <span class="stage-status-pill">PASSED</span>
+          </div>
+
+          <div class="stage-connector"></div>
+
+          <!-- Stage 6 -->
+          <div class="stage-node success" data-stage="6">
+            <div class="stage-icon">☁️</div>
+            <div class="stage-details">
+              <span class="stage-name">Docker Hub</span>
+              <span class="stage-meta">Push Tag & Latest</span>
+            </div>
+            <span class="stage-status-pill">PASSED</span>
+          </div>
+
+          <div class="stage-connector"></div>
+
+          <!-- Stage 7 -->
+          <div class="stage-node success" data-stage="7">
+            <div class="stage-icon">🚀</div>
+            <div class="stage-details">
+              <span class="stage-name">Deploy</span>
+              <span class="stage-meta">Container Rollout</span>
+            </div>
+            <span class="stage-status-pill">PASSED</span>
+          </div>
+
+          <div class="stage-connector"></div>
+
+          <!-- Stage 8 -->
+          <div class="stage-node success" data-stage="8">
+            <div class="stage-icon">🩺</div>
+            <div class="stage-details">
+              <span class="stage-name">Smoke Test</span>
+              <span class="stage-meta">/health Probe 200</span>
+            </div>
+            <span class="stage-status-pill">PASSED</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Live Telemetry Grid -->
+      <section class="telemetry-grid">
+        <!-- Card 1: Container Uptime & Health -->
+        <div class="telemetry-card">
+          <div class="card-header">
+            <span class="card-icon">⏱️</span>
+            <span class="card-title">Container Uptime</span>
+          </div>
+          <div class="card-main-val" id="telemetry-uptime">Loading...</div>
+          <div class="card-footer-info">
+            <span>Started:</span> <span id="telemetry-started">--:--:--</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Host & Container ID -->
+        <div class="telemetry-card">
+          <div class="card-header">
+            <span class="card-icon">💻</span>
+            <span class="card-title">Host / Container ID</span>
+          </div>
+          <div class="card-main-val mono-val" id="telemetry-hostname">Detecting...</div>
+          <div class="card-footer-info">
+            <span>Platform:</span> <span id="telemetry-platform">Node.js Runtime</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Memory Footprint -->
+        <div class="telemetry-card">
+          <div class="card-header">
+            <span class="card-icon">🧠</span>
+            <span class="card-title">Memory Allocation</span>
+          </div>
+          <div class="card-main-val" id="telemetry-memory">-- MB</div>
+          <div class="card-footer-info">
+            <span>Heap Used:</span> <span id="telemetry-heap">-- MB</span>
+          </div>
+        </div>
+
+        <!-- Card 4: Live Latency -->
+        <div class="telemetry-card">
+          <div class="card-header">
+            <span class="card-icon">📡</span>
+            <span class="card-title">Probe Latency</span>
+          </div>
+          <div class="card-main-val" id="telemetry-latency">-- ms</div>
+          <div class="card-footer-info">
+            <span>Protocol:</span> <span>HTTP/1.1 REST</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive API & Testing Deck -->
+      <section class="panel interactive-panel">
+        <div class="panel-header">
+          <div class="panel-title-group">
+            <h2 class="panel-title">Interactive Pipeline & Endpoint Testing</h2>
+            <span class="panel-subtitle">Test and monitor the live deployment APIs directly from this console</span>
+          </div>
+          <div class="action-buttons">
+            <button class="btn btn-primary" id="btn-health-check">
+              <span>🩺</span> Test /health
+            </button>
+            <button class="btn btn-secondary" id="btn-api-info">
+              <span>ℹ️</span> Fetch /api/info
+            </button>
+            <button class="btn btn-secondary" id="btn-metrics">
+              <span>📊</span> Fetch /metrics
+            </button>
+            <button class="btn btn-warning" id="btn-simulate-load">
+              <span>⚡</span> Simulate Load
+            </button>
+          </div>
+        </div>
+
+        <div class="console-box">
+          <div class="console-header">
+            <div class="console-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <span class="console-title" id="console-endpoint-label">GET /health</span>
+            <button class="copy-btn" id="copy-console-btn" title="Copy response">Copy JSON</button>
+          </div>
+          <pre class="console-body"><code id="console-output">// Live API response will appear here...
+Click "Test /health" or another button above to trigger an active probe.</code></pre>
+        </div>
+      </section>
+
+      <!-- Project Architecture & Key Highlights -->
+      <section class="highlights-grid">
+        <div class="highlight-box">
+          <div class="box-icon">⚙️</div>
+          <h3>Declarative Jenkinsfile</h3>
+          <p>
+            Standardized multi-stage Jenkins Declarative Pipeline defining checkout, linting, unit tests, 
+            docker builds, vulnerability checks, registry push, zero-downtime deployment, and post-build notifications.
+          </p>
+        </div>
+
+        <div class="highlight-box">
+          <div class="box-icon">📦</div>
+          <h3>Multi-Stage Dockerfile</h3>
+          <p>
+            Optimized multi-stage Docker build separating testing dependencies from the lean production runtime, 
+            drastically shrinking container footprint and hardening security with a non-root user.
+          </p>
+        </div>
+
+        <div class="highlight-box">
+          <div class="box-icon">🌐</div>
+          <h3>Docker Hub Registry</h3>
+          <p>
+            Automated image publishing with semantic versioning and build numbers (<code>username/cicd-pipeline-app:v1.0.BUILD</code>) 
+            paired with secured Jenkins credential bindings.
+          </p>
+        </div>
+
+        <div class="highlight-box">
+          <div class="box-icon">🛡️</div>
+          <h3>Automated Smoke Testing</h3>
+          <p>
+            Post-deployment health probe verification ensuring the deployed container returns HTTP 200 
+            with automated rollback script triggering upon any health failure.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>CI/CD Pipeline Automation System • Developed by <strong>Shaik Mohamed</strong></p>
+        <p class="footer-sub">Cognevance Cloud & DevOps Internship Project • Ready for Git Repository & Jenkins Deployment</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

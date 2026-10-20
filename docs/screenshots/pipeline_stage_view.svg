@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1150 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="stageGreen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <filter id="cardShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.45" />
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="1150" height="480" rx="14" fill="url(#bgGrad)" stroke="#334155" stroke-width="1.5" />
+
+  <!-- Top Jenkins Header Bar -->
+  <rect x="0" y="0" width="1150" height="64" rx="14" fill="#1e293b" />
+  <circle cx="36" cy="32" r="14" fill="#38bdf8" />
+  <!-- Jenkins Logo Silhouette / Icon -->
+  <text x="36" y="38" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="14" font-weight="900" fill="#0f172a" text-anchor="middle">J</text>
+  
+  <text x="64" y="32" font-family="Plus Jakarta Sans, -apple-system, sans-serif" font-size="16" font-weight="700" fill="#f8fafc">Jenkins Pipeline Stage View</text>
+  <text x="64" y="49" font-family="JetBrains Mono, monospace" font-size="12" fill="#94a3b8">Job: cicd-pipeline-automation-system &gt; branch: main</text>
+
+  <rect x="940" y="18" width="180" height="28" rx="14" fill="#064e3b" stroke="#10b981" stroke-width="1" />
+  <circle cx="956" cy="32" r="5" fill="#10b981" />
+  <text x="968" y="37" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" fill="#6ee7b7">BUILD #42 — PASSED</text>
+
+  <!-- Build Info Card Left -->
+  <g transform="translate(30, 90)">
+    <rect width="180" height="340" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1" filter="url(#cardShadow)" />
+    
+    <text x="20" y="35" font-family="Plus Jakarta Sans, sans-serif" font-size="14" font-weight="700" fill="#f1f5f9">Build #42 Details</text>
+    <line x1="20" y1="48" x2="160" y2="48" stroke="#334155" stroke-width="1" />
+
+    <text x="20" y="75" font-family="JetBrains Mono, monospace" font-size="11" fill="#94a3b8">Status:</text>
+    <text x="20" y="93" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" fill="#10b981">SUCCESS (0 errors)</text>
+
+    <text x="20" y="125" font-family="JetBrains Mono, monospace" font-size="11" fill="#94a3b8">Total Duration:</text>
+    <text x="20" y="143" font-family="JetBrains Mono, monospace" font-size="13" font-weight="700" fill="#f8fafc">2 min 13 sec</text>
+
+    <text x="20" y="175" font-family="JetBrains Mono, monospace" font-size="11" fill="#94a3b8">Git Commit:</text>
+    <text x="20" y="193" font-family="JetBrains Mono, monospace" font-size="12" font-weight="600" fill="#38bdf8">a79f42c (feat)</text>
+
+    <text x="20" y="225" font-family="JetBrains Mono, monospace" font-size="11" fill="#94a3b8">Author:</text>
+    <text x="20" y="243" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="600" fill="#e2e8f0">Shaik Mohamed</text>
+
+    <text x="20" y="275" font-family="JetBrains Mono, monospace" font-size="11" fill="#94a3b8">Artifacts:</text>
+    <text x="20" y="293" font-family="JetBrains Mono, monospace" font-size="11" fill="#cbd5e1">junit.xml (7/7)</text>
+
+    <rect x="20" y="308" width="140" height="20" rx="4" fill="#0f172a" />
+    <text x="90" y="322" font-family="JetBrains Mono, monospace" font-size="10" fill="#38bdf8" text-anchor="middle">Docker Hub: Pushed</text>
+  </g>
+
+  <!-- Pipeline Stages Row -->
+  <g transform="translate(230, 90)">
+    <!-- Stage 1 -->
+    <g transform="translate(0, 0)">
+      <rect width="102" height="42" rx="6" fill="#334155" />
+      <text x="51" y="22" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700" fill="#f1f5f9" text-anchor="middle">Checkout</text>
+      <text x="51" y="36" font-family="JetBrains Mono, monospace" font-size="9" fill="#94a3b8" text-anchor="middle">Git SCM</text>
+      <rect y="50" width="102" height="180" rx="8" fill="url(#stageGreen)" />
+      <text x="51" y="115" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">4s</text>
+      <text x="51" y="135" font-family="JetBrains Mono, monospace" font-size="10" fill="#d1fae5" text-anchor="middle">SUCCESS</text>
+      <circle cx="51" cy="180" r="14" fill="#064e3b" />
+      <path d="M45 180 L49 184 L57 175" fill="none" stroke="#ffffff" stroke-width="2" />
+    </g>
+
+    <!-- Stage 2 -->
+    <g transform="translate(112, 0)">
+      <rect width="102" height="42" rx="6" fill="#334155" />
+      <text x="51" y="22" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700" fill="#f1f5f9" text-anchor="middle">Linting</text>
+      <text x="51" y="36" font-family="JetBrains Mono, monospace" font-size="9" fill="#94a3b8" text-anchor="middle">ESLint</text>
+      <rect y="50" width="102" height="180" rx="8" fill="url(#stageGreen)" />
+      <text x="51" y="115" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">8s</text>
+      <text x="51" y="135" font-family="JetBrains Mono, monospace" font-size="10" fill="#d1fae5" text-anchor="middle">SUCCESS</text>
+      <circle cx="51" cy="180" r="14" fill="#064e3b" />
+      <path d="M45 180 L49 184 L57 175" fill="none" stroke="#ffffff" stroke-width="2" />
+    </g>
+
+    <!-- Stage 3 -->
+    <g transform="translate(224, 0)">
+      <rect width="102" height="42" rx="6" fill="#334155" />
+      <text x="51" y="22" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700" fill="#f1f5f9" text-anchor="middle">Unit Tests</text>
+      <text x="51" y="36" font-family="JetBrains Mono, monospace" font-size="9" fill="#94a3b8" text-anchor="middle">Jest (7/7)</text>
+      <rect y="50" width="102" height="180" rx="8" fill="url(#stageGreen)" />
+      <text x="51" y="115" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">14s</text>
+      <text x="51" y="135" font-family="JetBrains Mono, monospace" font-size="10" fill="#d1fae5" text-anchor="middle">SUCCESS</text>
+      <circle cx="51" cy="180" r="14" fill="#064e3b" />
+      <path d="M45 180 L49 184 L57 175" fill="none" stroke="#ffffff" stroke-width="2" />
+    </g>
+
+    <!-- Stage 4 -->
+    <g transform="translate(336, 0)">
+      <rect width="102" height="42" rx="6" fill="#334155" />
+      <text x="51" y="22" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700" fill="#f1f5f9" text-anchor="middle">Docker Build</text>
+      <text x="51" y="36" font-family="JetBrains Mono, monospace" font-size="9" fill="#94a3b8" text-anchor="middle">Multi-Stage</text>
+      <rect y="50" width="102" height="180" rx="8" fill="url(#stageGreen)" />
+      <text x="51" y="115" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">38s</text>
+      <text x="51" y="135" font-family="JetBrains Mono, monospace" font-size="10" fill="#d1fae5" text-anchor="middle">SUCCESS</text>
+      <circle cx="51" cy="180" r="14" fill="#064e3b" />
+      <path d="M45 180 L49 184 L57 175" fill="none" stroke="#ffffff" stroke-width="2" />
+    </g>
+
+    <!-- Stage 5 -->
+    <g transform="translate(448, 0)">
+      <rect width="102" height="42" rx="6" fill="#334155" />
+      <text x="51" y="22" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700" fill="#f1f5f9" text-anchor="middle">Security Scan</text>
+      <text x="51" y="36" font-family="JetBrains Mono, monospace" font-size="9" fill="#94a3b8" text-anchor="middle">Trivy CVE</text>
+      <rect y="50" width="102" height="180" rx="8" fill="url(#stageGreen)" />
+      <text x="51" y="115" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">22s</text>
+      <text x="51" y="135" font-family="JetBrains Mono, monospace" font-size="10" fill="#d1fae5" text-anchor="middle">SUCCESS</text>
+      <circle cx="51" cy="180" r="14" fill="#064e3b" />
+      <path d="M45 180 L49 184 L57 175" fill="none" stroke="#ffffff" stroke-width="2" />
+    </g>
+
+    <!-- Stage 6 -->
+    <g transform="translate(560, 0)">
+      <rect width="102" height="42" rx="6" fill="#334155" />
+      <text x="51" y="22" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700" fill="#f1f5f9" text-anchor="middle">Docker Hub</text>
+      <text x="51" y="36" font-family="JetBrains Mono, monospace" font-size="9" fill="#94a3b8" text-anchor="middle">Push Registry</text>
+      <rect y="50" width="102" height="180" rx="8" fill="url(#stageGreen)" />
+      <text x="51" y="115" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">29s</text>
+      <text x="51" y="135" font-family="JetBrains Mono, monospace" font-size="10" fill="#d1fae5" text-anchor="middle">SUCCESS</text>
+      <circle cx="51" cy="180" r="14" fill="#064e3b" />
+      <path d="M45 180 L49 184 L57 175" fill="none" stroke="#ffffff" stroke-width="2" />
+    </g>
+
+    <!-- Stage 7 -->
+    <g transform="translate(672, 0)">
+      <rect width="102" height="42" rx="6" fill="#334155" />
+      <text x="51" y="22" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700" fill="#f1f5f9" text-anchor="middle">Deployment</text>
+      <text x="51" y="36" font-family="JetBrains Mono, monospace" font-size="9" fill="#94a3b8" text-anchor="middle">Zero-Downtime</text>
+      <rect y="50" width="102" height="180" rx="8" fill="url(#stageGreen)" />
+      <text x="51" y="115" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">12s</text>
+      <text x="51" y="135" font-family="JetBrains Mono, monospace" font-size="10" fill="#d1fae5" text-anchor="middle">SUCCESS</text>
+      <circle cx="51" cy="180" r="14" fill="#064e3b" />
+      <path d="M45 180 L49 184 L57 175" fill="none" stroke="#ffffff" stroke-width="2" />
+    </g>
+
+    <!-- Stage 8 -->
+    <g transform="translate(784, 0)">
+      <rect width="102" height="42" rx="6" fill="#334155" />
+      <text x="51" y="22" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700" fill="#f1f5f9" text-anchor="middle">Smoke Test</text>
+      <text x="51" y="36" font-family="JetBrains Mono, monospace" font-size="9" fill="#94a3b8" text-anchor="middle">/health Probe</text>
+      <rect y="50" width="102" height="180" rx="8" fill="url(#stageGreen)" />
+      <text x="51" y="115" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">6s</text>
+      <text x="51" y="135" font-family="JetBrains Mono, monospace" font-size="10" fill="#d1fae5" text-anchor="middle">SUCCESS</text>
+      <circle cx="51" cy="180" r="14" fill="#064e3b" />
+      <path d="M45 180 L49 184 L57 175" fill="none" stroke="#ffffff" stroke-width="2" />
+    </g>
+
+    <!-- Horizontal connector bar beneath stages -->
+    <rect y="245" width="886" height="4" rx="2" fill="#10b981" />
+
+    <!-- Terminal Audit Strip -->
+    <g transform="translate(0, 260)">
+      <rect width="886" height="70" rx="8" fill="#0b1120" stroke="#1e293b" stroke-width="1" />
+      <text x="15" y="25" font-family="JetBrains Mono, monospace" font-size="11" fill="#38bdf8">&gt; [Pipeline] Completed Stage: Smoke Test &amp; Health Check: HTTP 200 OK</text>
+      <text x="15" y="45" font-family="JetBrains Mono, monospace" font-size="11" fill="#10b981">&gt; [Pipeline] Finished: SUCCESS | Built artifacts archived | Published to Docker Hub</text>
+    </g>
+  </g>
+</svg>
