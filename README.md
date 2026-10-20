@@ -178,29 +178,6 @@ flowchart TD
 
 ---
 
-## 🎤 Internship Defense & Presentation Guide
-
-Preparing for your viva, interview, or mentor evaluation?  
-Read the dedicated [**docs/PRESENTATION_GUIDE.md**](docs/PRESENTATION_GUIDE.md) for:
-- 60-second elevator pitch script
-- Detailed 5-minute technical walkthrough
-- Live demonstration click-through checklist
-- Top 12 interview questions and model answers (Declarative vs Scripted, secrets handling, rollback mechanism, multi-stage benefits).
-
----
-
-## 🚀 Pushing to GitHub
-
-To publish this repository to your GitHub profile, follow the steps in [**docs/GITHUB_SETUP_AND_PUSH.md**](docs/GITHUB_SETUP_AND_PUSH.md):
-
-```bash
-git remote add origin https://github.com/shaikmohamed673-dev/cicd-pipeline-automation-system.git
-git branch -M main
-git push -u origin main
-```
-
----
-
 ## 📄 License
 
 This project is licensed under the [MIT License](LICENSE).
