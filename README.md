@@ -65,7 +65,6 @@ cicd-pipeline-automation-system/
 │   ├── JENKINS_SETUP_GUIDE.md     # Step-by-step Jenkins installation and job setup
 │   ├── DOCKER_HUB_INTEGRATION.md  # Docker Hub repository, tokens, and tagging guide
 │   ├── MONITORING_AND_LOGS.md     # Telemetry, logging driver, and health check guide
-│   ├── PRESENTATION_GUIDE.md      # Internship viva defense script & Q&A preparation
 │   ├── GITHUB_SETUP_AND_PUSH.md   # Copy-paste commands to push repository to GitHub
 │   └── screenshots/
 │       ├── pipeline_stage_view.svg
@@ -99,7 +98,6 @@ cicd-pipeline-automation-system/
 ├── docker-compose.yml             # Local full-stack compose (Application + Jenkins)
 ├── docker-compose.prod.yml        # Production-only container compose profile
 ├── Jenkinsfile                    # Production 8-stage declarative CI/CD pipeline
-├── LICENSE                        # MIT License
 ├── package.json                   # Application dependencies and automation scripts
 └── README.md                      # Comprehensive project showcase and documentation
 ```
