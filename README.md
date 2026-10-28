@@ -174,7 +174,3 @@ flowchart TD
 - **`GET /api/status`** — Microservice availability check (`healthy: true`, status: `ONLINE`).
 
 ---
-
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE).
